@@ -13,6 +13,11 @@
 			"type": "string",
 			"source": "text",
 			"selector": ".full-name"
+		},
+		"jobTitle": {
+			"type": "string",
+			"source": "text",
+			"selector": ".job-title"
 		}
 	},
 	"supports": {

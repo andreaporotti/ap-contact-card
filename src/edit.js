@@ -53,6 +53,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						value={ attributes.fullName }
 						onChange={ ( value ) => setAttributes( { fullName: value } ) }
 					/>
+					<TextControl
+						label={ __( 'Job title', 'ap-contact-card' ) }
+						value={ attributes.jobTitle }
+						onChange={ ( value ) => setAttributes( { jobTitle: value } ) }
+					/>
 				</Placeholder>
 			) }
 		</div>

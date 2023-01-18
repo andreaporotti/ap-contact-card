@@ -21,6 +21,7 @@ export default function Save( { attributes } ) {
 	return (
 		<div { ...blockProps }>
 			<div class="full-name">{ attributes.fullName }</div>
+			<div class="job-title">{ attributes.jobTitle }</div>
 		</div>
 	);
 }
