@@ -1,4 +1,11 @@
 /**
+ * WordPress components that create the necessary UI elements for the block
+ *
+ * @see https://developer.wordpress.org/block-editor/packages/packages-components/
+ */
+ import { Placeholder, TextControl } from '@wordpress/components';
+
+/**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
@@ -29,13 +36,25 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes, isSelected } ) {
+	const blockProps = useBlockProps();
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Ap Contact Card – hello from the editor!',
-				'ap-contact-card'
+		<div { ...blockProps }>
+			{ attributes.fullName && !isSelected ? (
+				<div>{ attributes.fullName }</div>
+			) : (
+				<Placeholder
+					label={ __( 'Contact Card', 'ap-contact-card' ) }
+					instructions={ __( 'Fill in the contact information', 'ap-contact-card' ) }
+				>
+					<TextControl
+						label={ __( 'Full name', 'ap-contact-card' ) }
+						value={ attributes.fullName }
+						onChange={ ( value ) => setAttributes( { fullName: value } ) }
+					/>
+				</Placeholder>
 			) }
-		</p>
+		</div>
 	);
 }

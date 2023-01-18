@@ -7,6 +7,14 @@
 	"category": "widgets",
 	"icon": "id",
 	"description": "A WordPress block to insert a card that shows personal contact information.",
+	"keywords": [ "card", "contact" ],
+	"attributes": {
+		"fullName": {
+			"type": "string",
+			"source": "text",
+			"selector": ".full-name"
+		}
+	},
 	"supports": {
 		"html": false
 	},

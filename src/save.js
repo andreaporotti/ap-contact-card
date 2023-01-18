@@ -15,10 +15,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save() {
+export default function Save( { attributes } ) {
+	const blockProps = useBlockProps.save();
+
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Ap Contact Card – hello from the saved content!' }
-		</p>
+		<div { ...blockProps }>
+			<div class="full-name">{ attributes.fullName }</div>
+		</div>
 	);
 }
