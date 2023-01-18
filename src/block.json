@@ -18,6 +18,11 @@
 			"type": "string",
 			"source": "text",
 			"selector": ".job-title"
+		},
+		"email": {
+			"type": "string",
+			"source": "text",
+			"selector": ".email"
 		}
 	},
 	"supports": {

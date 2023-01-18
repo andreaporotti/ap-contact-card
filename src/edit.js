@@ -58,6 +58,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						value={ attributes.jobTitle }
 						onChange={ ( value ) => setAttributes( { jobTitle: value } ) }
 					/>
+					<TextControl
+						label={ __( 'Email', 'ap-contact-card' ) }
+						value={ attributes.email }
+						onChange={ ( value ) => setAttributes( { email: value } ) }
+					/>
 				</Placeholder>
 			) }
 		</div>
