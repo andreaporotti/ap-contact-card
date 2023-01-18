@@ -23,6 +23,11 @@
 			"type": "string",
 			"source": "text",
 			"selector": ".email"
+		},
+		"description": {
+			"type": "string",
+			"source": "text",
+			"selector": ".description"
 		}
 	},
 	"supports": {

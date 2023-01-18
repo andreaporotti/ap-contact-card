@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
- import { Placeholder, TextControl } from '@wordpress/components';
+ import { Placeholder, TextControl, TextareaControl } from '@wordpress/components';
 
 /**
  * Retrieves the translation of text.
@@ -62,6 +62,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						label={ __( 'Email', 'ap-contact-card' ) }
 						value={ attributes.email }
 						onChange={ ( value ) => setAttributes( { email: value } ) }
+					/>
+					<TextareaControl
+						label={ __( 'Description', 'ap-contact-card' ) }
+						value={ attributes.description }
+						onChange={ ( value ) => setAttributes( { description: value } ) }
 					/>
 				</Placeholder>
 			) }
