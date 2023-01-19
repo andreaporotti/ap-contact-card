@@ -24,6 +24,9 @@ export default function Save( { attributes } ) {
 			<div class="job-title">{ attributes.jobTitle }</div>
 			<div class="email">{ attributes.email }</div>
 			<p class="description">{ attributes.description }</p>
+			{ attributes.imageUrl && (
+				<img class="image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+			) }
 		</div>
 	);
 }

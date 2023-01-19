@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
- import { Placeholder, TextControl, TextareaControl } from '@wordpress/components';
+ import { Placeholder, TextControl, TextareaControl, Button } from '@wordpress/components';
 
 /**
  * Retrieves the translation of text.
@@ -18,7 +18,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, MediaUploadCheck, MediaPlaceholder } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -42,7 +42,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	return (
 		<div { ...blockProps }>
 			{ attributes.fullName && !isSelected ? (
-				<div>{ attributes.fullName }</div>
+				<div>{ attributes.fullName }...</div>
 			) : (
 				<Placeholder
 					label={ __( 'Contact Card', 'ap-contact-card' ) }
@@ -68,6 +68,39 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						value={ attributes.description }
 						onChange={ ( value ) => setAttributes( { description: value } ) }
 					/>
+
+					{ attributes.imageUrl ? (
+						<div>
+							<img src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+							<Button
+								isDestructive
+								label={ __( 'Remove image', 'ap-contact-card' ) }
+								onClick={ () => setAttributes( { 
+									imageAlt: '',
+									imageUrl: '',
+								} ) }
+							>
+								{ __( 'Remove image', 'ap-contact-card' ) }
+							</Button>
+						</div>
+					) : (
+						<MediaUploadCheck>
+							<MediaPlaceholder
+								icon={ 'format-image' }
+								labels={ {
+									title: __( 'Add image', 'ap-contact-card' ),
+									instructions: __( 'Select the person photo.', 'ap-contact-card' )
+								} }
+								accept="image/*"
+								allowedTypes={ ['image'] }
+								multiple={ false }
+								onSelect={ ( image ) => setAttributes( { 
+									imageAlt: image.alt,
+									imageUrl: image.url,
+								} ) }
+							/>
+						</MediaUploadCheck>
+					) }
 				</Placeholder>
 			) }
 		</div>

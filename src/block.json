@@ -28,6 +28,18 @@
 			"type": "string",
 			"source": "text",
 			"selector": ".description"
+		},
+		"imageUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".image",
+			"attribute": "src"
+		},
+		"imageAlt": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".image",
+			"attribute": "alt"
 		}
 	},
 	"supports": {
