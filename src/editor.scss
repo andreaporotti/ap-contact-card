@@ -4,6 +4,8 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-ap-contact-card {
-	border: 1px dotted #f00;
+.wp-block-ap-ap-contact-card {
+	.components-placeholder__fieldset {
+		flex-direction: column;
+	}
 }
