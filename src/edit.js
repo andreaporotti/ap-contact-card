@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-components/
  */
- import { Placeholder, TextControl, TextareaControl, Button } from '@wordpress/components';
+ import { Placeholder, TextControl, TextareaControl, Button, RadioControl } from '@wordpress/components';
 
 /**
  * Retrieves the translation of text.
@@ -62,6 +62,17 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						label={ __( 'Email', 'ap-contact-card' ) }
 						value={ attributes.email }
 						onChange={ ( value ) => setAttributes( { email: value } ) }
+					/>
+					<RadioControl
+						className={ 'workplace' }
+						label={ __( 'Workplace', 'ap-contact-card') }
+						selected={ attributes.workplace }
+						options={ [
+							{ label: 'Office', value: 'office' },
+							{ label: 'Home', value: 'home' },
+							{ label: 'Hybrid', value: 'hybrid' },
+						] }
+						onChange={ ( value ) => setAttributes( { workplace: value } ) }
 					/>
 					<TextareaControl
 						label={ __( 'Description', 'ap-contact-card' ) }

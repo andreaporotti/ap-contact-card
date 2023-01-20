@@ -18,11 +18,26 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function Save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
+	// Set workplace text from value.
+	let workplace = '';
+	switch(attributes.workplace) {
+		case 'office':
+			workplace = 'Office';
+			break;
+		case 'home':
+			workplace = 'Home';
+			break;
+		case 'hybrid':
+			workplace = 'Hybrid';
+			break;
+	}
+
 	return (
 		<div { ...blockProps }>
 			<div class="full-name">{ attributes.fullName }</div>
 			<div class="job-title">{ attributes.jobTitle }</div>
 			<div class="email">{ attributes.email }</div>
+			<div class="workplace">{ workplace }</div>
 			<p class="description">{ attributes.description }</p>
 			{ attributes.imageUrl && (
 				<img class="image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />

@@ -40,6 +40,9 @@
 			"source": "attribute",
 			"selector": ".image",
 			"attribute": "alt"
+		},
+		"workplace": {
+			"type": "string"
 		}
 	},
 	"supports": {
