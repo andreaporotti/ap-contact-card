@@ -34,14 +34,14 @@ export default function Save( { attributes } ) {
 
 	return (
 		<div { ...blockProps }>
-			<div class="full-name">{ attributes.fullName }</div>
-			<div class="job-title">{ attributes.jobTitle }</div>
-			<div class="email">{ attributes.email }</div>
-			<div class="workplace">{ workplace }</div>
-			<p class="description">{ attributes.description }</p>
 			{ attributes.imageUrl && (
-				<img class="image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+				<img class="apcc-image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
 			) }
+			<div class="apcc-full-name">{ attributes.fullName }</div>
+			<div class="apcc-job-title">{ attributes.jobTitle }</div>
+			<div class="apcc-email">{ attributes.email }</div>
+			<div class="apcc-workplace">{ workplace }</div>
+			<p class="apcc-description">{ attributes.description }</p>
 		</div>
 	);
 }

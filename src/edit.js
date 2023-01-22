@@ -39,10 +39,34 @@ import './editor.scss';
 export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useBlockProps();
 
+	// Set workplace text from value.
+	let workplace = '';
+	switch(attributes.workplace) {
+		case 'office':
+			workplace = 'Office';
+			break;
+		case 'home':
+			workplace = 'Home';
+			break;
+		case 'hybrid':
+			workplace = 'Hybrid';
+			break;
+	}
+
 	return (
 		<div { ...blockProps }>
 			{ attributes.fullName && !isSelected ? (
-				<div>{ attributes.fullName }...</div>
+				// Preview when the block is not selected.
+				<div>
+					{ attributes.imageUrl && (
+						<img class="apcc-image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
+					) }
+					<div class="apcc-full-name">{ attributes.fullName }</div>
+					<div class="apcc-job-title">{ attributes.jobTitle }</div>
+					<div class="apcc-email">{ attributes.email }</div>
+					<div class="apcc-workplace">{ workplace }</div>
+					<p class="apcc-description">{ attributes.description }</p>
+				</div>
 			) : (
 				<Placeholder
 					label={ __( 'Contact Card', 'ap-contact-card' ) }

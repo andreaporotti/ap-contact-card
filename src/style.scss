@@ -5,8 +5,34 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-ap-contact-card {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.wp-block-ap-ap-contact-card {
+	width: 320px;
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+
+	.apcc {
+		&-image {
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		&-full-name {
+			font-weight: 600;
+			border-bottom: 1px solid #ddd;
+			margin-bottom: 8px;
+		}
+
+		&-job-title,
+		&-email,
+		&-workplace {
+			font-size: 0.85rem;
+		}
+
+		&-description {
+			font-size: 0.85rem;
+			margin: 8px 0 0 0;
+			border-top: 1px solid #ddd;
+		}
+	}
 }
