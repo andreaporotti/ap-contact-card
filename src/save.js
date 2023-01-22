@@ -18,18 +18,11 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function Save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
-	// Set workplace text from value.
-	let workplace = '';
-	switch(attributes.workplace) {
-		case 'office':
-			workplace = 'Office';
-			break;
-		case 'home':
-			workplace = 'Home';
-			break;
-		case 'hybrid':
-			workplace = 'Hybrid';
-			break;
+	// List of workplaces.
+	const workplaces = {
+		'office': 'Office',
+		'home'  : 'Home',
+		'hybrid': 'Hybrid',
 	}
 
 	return (
@@ -40,7 +33,7 @@ export default function Save( { attributes } ) {
 			<div class="apcc-full-name">{ attributes.fullName }</div>
 			<div class="apcc-job-title">{ attributes.jobTitle }</div>
 			<div class="apcc-email">{ attributes.email }</div>
-			<div class="apcc-workplace">{ workplace }</div>
+			<div class="apcc-workplace">{ workplaces[attributes.workplace] }</div>
 			<p class="apcc-description">{ attributes.description }</p>
 		</div>
 	);
