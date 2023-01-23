@@ -9,7 +9,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 /**
  * Import block custom components.
  */
-import ContactCard from './contact-card';
+import ContactCard from './components/contact-card';
 
 /**
  * The save function defines the way in which the different attributes should

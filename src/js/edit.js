@@ -26,12 +26,12 @@ import { useBlockProps, MediaUploadCheck, MediaPlaceholder } from '@wordpress/bl
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './css/editor.scss';
+import '../css/editor.scss';
 
 /**
  * Import block custom components.
  */
-import ContactCard from './contact-card';
+import ContactCard from './components/contact-card';
 
 /**
  * The edit function describes the structure of your block in the context of the
