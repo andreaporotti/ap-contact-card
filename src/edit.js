@@ -26,7 +26,7 @@ import { useBlockProps, MediaUploadCheck, MediaPlaceholder } from '@wordpress/bl
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './editor.scss';
+import './css/editor.scss';
 
 /**
  * Import block custom components.
