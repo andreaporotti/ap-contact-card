@@ -7,6 +7,11 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 /**
+ * Import block custom components.
+ */
+import ContactCard from './contact-card';
+
+/**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
@@ -18,23 +23,9 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function Save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
-	// List of workplaces.
-	const workplaces = {
-		'office': 'Office',
-		'home'  : 'Home',
-		'hybrid': 'Hybrid',
-	}
-
 	return (
 		<div { ...blockProps }>
-			{ attributes.imageUrl && (
-				<img class="apcc-image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
-			) }
-			<div class="apcc-full-name">{ attributes.fullName }</div>
-			<div class="apcc-job-title">{ attributes.jobTitle }</div>
-			<div class="apcc-email">{ attributes.email }</div>
-			<div class="apcc-workplace">{ workplaces[attributes.workplace] }</div>
-			<p class="apcc-description">{ attributes.description }</p>
+			<ContactCard { ...attributes } />
 		</div>
 	);
 }

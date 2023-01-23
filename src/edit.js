@@ -29,6 +29,11 @@ import { useBlockProps, MediaUploadCheck, MediaPlaceholder } from '@wordpress/bl
 import './editor.scss';
 
 /**
+ * Import block custom components.
+ */
+import ContactCard from './contact-card';
+
+/**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
  *
@@ -39,27 +44,11 @@ import './editor.scss';
 export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useBlockProps();
 
-	// List of workplaces.
-	const workplaces = {
-		'office': 'Office',
-		'home'  : 'Home',
-		'hybrid': 'Hybrid',
-	}
-
 	return (
 		<div { ...blockProps }>
 			{ attributes.fullName && !isSelected ? (
-				// Preview when the block is not selected.
-				<div>
-					{ attributes.imageUrl && (
-						<img class="apcc-image" src={ attributes.imageUrl } alt={ attributes.imageAlt } />
-					) }
-					<div class="apcc-full-name">{ attributes.fullName }</div>
-					<div class="apcc-job-title">{ attributes.jobTitle }</div>
-					<div class="apcc-email">{ attributes.email }</div>
-					<div class="apcc-workplace">{ workplaces[attributes.workplace] }</div>
-					<p class="apcc-description">{ attributes.description }</p>
-				</div>
+				// Preview the card when the block is not selected.
+				<ContactCard { ...attributes } />
 			) : (
 				<Placeholder
 					label={ __( 'Contact Card', 'ap-contact-card' ) }
