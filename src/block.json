@@ -43,7 +43,11 @@
 		},
 		"workplace": {
 			"type": "string"
-		}
+		},
+		"align": {
+            "type": "string",
+            "default": "center"
+        }
 	},
 	"supports": {
 		"html": false

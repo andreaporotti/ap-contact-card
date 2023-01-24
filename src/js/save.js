@@ -21,7 +21,7 @@ import ContactCard from './components/contact-card';
  * @return {WPElement} Element to render.
  */
 export default function Save( { attributes } ) {
-	const blockProps = useBlockProps.save();
+	const blockProps = useBlockProps.save( { className: 'align' + attributes.align } );
 
 	return (
 		<div { ...blockProps }>

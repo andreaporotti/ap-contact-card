@@ -18,7 +18,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, MediaUploadCheck, MediaPlaceholder } from '@wordpress/block-editor';
+import { useBlockProps, MediaUploadCheck, MediaPlaceholder, BlockControls, BlockAlignmentToolbar } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -42,10 +42,20 @@ import ContactCard from './components/contact-card';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const blockProps = useBlockProps();
+	const blockProps = useBlockProps( { className: 'align' + attributes.align } );
 
 	return (
 		<div { ...blockProps }>
+			{
+				<BlockControls>
+					<BlockAlignmentToolbar
+						value={ attributes.align }
+						onChange={ ( nextAlign ) => { setAttributes( { align: nextAlign } ) } }
+						controls={ [ 'left', 'center', 'right' ] }
+					/>
+				</BlockControls>
+			}
+
 			{ attributes.fullName && !isSelected ? (
 				// Preview the card when the block is not selected.
 				<ContactCard { ...attributes } />
