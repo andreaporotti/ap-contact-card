@@ -20,7 +20,23 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function create_block_ap_contact_card_block_init() {
+function ap_register_blocks() {
 	register_block_type( __DIR__ . '/build' );
 }
-add_action( 'init', 'create_block_ap_contact_card_block_init' );
+add_action( 'init', 'ap_register_blocks' );
+
+
+function ap_add_blocks_category( $block_categories, $editor_context ) {
+    if ( ! empty( $editor_context->post ) ) {
+        array_push(
+            $block_categories,
+            array(
+                'slug'  => 'ap-blocks',
+                'title' => __( 'AP Blocks', 'ap-contact-card' ),
+                'icon'  => null,
+            )
+        );
+    }
+    return $block_categories;
+}
+add_filter( 'block_categories_all', 'ap_add_blocks_category', 10, 2 );

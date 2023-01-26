@@ -4,7 +4,7 @@
 	"name": "ap/ap-contact-card",
 	"version": "1.0.0",
 	"title": "AP Contact Card",
-	"category": "widgets",
+	"category": "ap-blocks",
 	"icon": "id",
 	"description": "A WordPress block to insert a card that shows personal contact information.",
 	"keywords": [ "card", "contact" ],
