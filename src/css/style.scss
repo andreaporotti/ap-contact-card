@@ -5,6 +5,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@tailwind components;
+@tailwind utilities;
+
 .wp-block-ap-ap-contact-card {
 	width: 320px;
 	padding: 8px;
