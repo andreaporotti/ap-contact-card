@@ -4,16 +4,16 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+@tailwind components;
+@tailwind utilities;
+
 .wp-block-ap-ap-contact-card {
 	.components-placeholder__fieldset {
-		flex-direction: column;
-
 		.workplace {
-			margin-bottom: 8px;
+			@apply mb-2;
 			
 			.components-flex {
-				flex-direction: row;
-				justify-content: flex-start;
+				@apply flex-row justify-start;
 			}
 		}
 	}

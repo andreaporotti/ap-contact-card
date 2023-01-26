@@ -9,6 +9,31 @@
 @tailwind utilities;
 
 .wp-block-ap-ap-contact-card {
+	@apply w-80 p-2 border border-solid border-gray-300 rounded-lg;
+
+	.apcc {
+		&-image {
+			@apply w-full rounded-lg;
+		}
+
+		&-full-name {
+			@apply py-1 px-2 mb-3 text-xl font-semibold border-0 border-b border-solid border-gray-300 rounded-lg;
+		}
+
+		&-job-title,
+		&-email,
+		&-workplace,
+		&-description {
+			@apply text-base m-0;
+		}
+
+		&-label {
+			@apply block mt-2 text-sm font-semibold text-gray-500;
+		}
+	}
+}
+
+/*.wp-block-ap-ap-contact-card {
 	width: 320px;
 	padding: 8px;
 	border: 1px solid #ddd;
@@ -41,4 +66,4 @@
 			font-weight: 600;
 		}
 	}
-}
+}*/
