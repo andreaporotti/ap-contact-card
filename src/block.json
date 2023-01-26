@@ -12,22 +12,26 @@
 		"fullName": {
 			"type": "string",
 			"source": "text",
-			"selector": ".apcc-full-name"
+			"selector": ".apcc-full-name",
+			"default": ""
 		},
 		"jobTitle": {
 			"type": "string",
 			"source": "text",
-			"selector": ".apcc-job-title"
+			"selector": ".apcc-job-title",
+			"default": ""
 		},
 		"email": {
 			"type": "string",
 			"source": "text",
-			"selector": ".apcc-email"
+			"selector": ".apcc-email",
+			"default": ""
 		},
 		"description": {
 			"type": "string",
 			"source": "text",
-			"selector": ".apcc-description"
+			"selector": ".apcc-description",
+			"default": ""
 		},
 		"imageUrl": {
 			"type": "string",
