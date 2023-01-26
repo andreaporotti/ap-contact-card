@@ -1,8 +1,6 @@
 module.exports = {
 	plugins: {
-		'postcss-multiple-tailwind': {
-			mode: 'auto',
-		},
+		tailwindcss: {},
 		autoprefixer: { grid: true },
 		...(process.env.NODE_ENV === 'production'
 			? {
